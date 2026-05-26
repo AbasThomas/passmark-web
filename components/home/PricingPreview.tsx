@@ -152,10 +152,7 @@ export default function PricingPreview() {
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
         <div className="pricing-header text-center max-w-3xl mx-auto mb-20 space-y-6">
-          <span className="inline-flex items-center gap-2 border border-[#0B2317] rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#0B2317]">
-            <Sparkles size={12} />
-            Simple Pricing
-          </span>
+        
           <h2 className="pricing-display text-[clamp(40px,5vw,64px)] font-bold text-[#0B2317] leading-[1.05] tracking-tight">
             Invest in your <span className="italic font-normal">future</span>.
           </h2>

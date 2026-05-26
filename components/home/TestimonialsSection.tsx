@@ -153,10 +153,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header Block */}
         <div className="text-center space-y-6 mb-20 max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 border border-[#0B2317] rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#0B2317] bg-[#FAF7F2]">
-            <MessageSquare size={12} />
-            Student Stories
-          </span>
+      
           <h2 className="testim-display text-[clamp(40px,5vw,64px)] font-bold text-[#0B2317] leading-[1.05] tracking-tight">
             They hit their Passmark. <span className="italic font-normal">You're next.</span>
           </h2>

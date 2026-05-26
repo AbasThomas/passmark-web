@@ -5,8 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Instrument_Serif } from "next/font/google";
 import { gsap } from "gsap";
-import { CheckmarkCircle02Icon, ArrowUpRight01Icon } from "hugeicons-react";
-import { X, Menu } from "lucide-react";
+import {
+  ArrowUpRight01Icon,
+  Cancel01Icon,
+  CheckmarkCircle02Icon,
+  Menu01Icon,
+} from "hugeicons-react";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
@@ -161,7 +165,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(v => !v)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? <Cancel01Icon size={20} /> : <Menu01Icon size={20} />}
           </button>
         </div>
       </nav>
@@ -178,7 +182,7 @@ export default function Navbar() {
           style={{ color: "rgba(250,247,242,0.6)", background: "rgba(250,247,242,0.06)" }}
           onClick={() => setMenuOpen(false)}
         >
-          <X size={18} />
+          <Cancel01Icon size={18} />
         </button>
 
         {/* Logo */}

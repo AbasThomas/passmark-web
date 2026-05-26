@@ -5,15 +5,15 @@ import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
 import { gsap } from "gsap";
 import {
-  AlertTriangle,
-  ArrowRight,
-  CheckCircle2,
-  Clock3,
-  Download,
-  ShieldCheck,
-  Smartphone,
-  XCircle,
-} from "lucide-react";
+  Alert02Icon,
+  ArrowRight01Icon,
+  CheckmarkCircle02Icon,
+  Clock03Icon,
+  Download04Icon,
+  SecurityCheckIcon,
+  SmartPhone01Icon,
+  CancelCircleIcon,
+} from "hugeicons-react";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
@@ -28,21 +28,21 @@ const availability = [
     label: "Android beta",
     detail: "Private testing is active. APK access is limited while we stabilize the build.",
     status: "Beta",
-    icon: Smartphone,
+    icon: SmartPhone01Icon,
     available: true,
   },
   {
     label: "Google Play",
     detail: "Not available on Play Store yet. The listing will come with the stable release.",
     status: "Coming soon",
-    icon: Download,
+    icon: Download04Icon,
     available: false,
   },
   {
     label: "Desktop app",
     detail: "No desktop app for now. Passmark is focused on mobile-first exam prep.",
     status: "Not available",
-    icon: XCircle,
+    icon: CancelCircleIcon,
     available: false,
   },
 ];
@@ -144,7 +144,7 @@ export default function DownloadPage() {
   return (
     <main
       ref={pageRef}
-      className={`${instrumentSerif.variable} relative isolate min-h-screen overflow-hidden bg-[#061F13] px-4 pb-20 pt-28 text-[#F3FFF1] md:px-10 md:pb-28 md:pt-32`}
+      className={`${instrumentSerif.variable} relative isolate min-h-screen overflow-hidden bg-[#061F13] px-4 pb-16 pt-24 text-[#F3FFF1] sm:px-6 md:px-10 md:pb-28 md:pt-32`}
     >
       <div
         aria-hidden="true"
@@ -170,8 +170,8 @@ export default function DownloadPage() {
         style={{ mixBlendMode: "soft-light" }}
       />
 
-      <section className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
-        <div>
+      <section className="mx-auto grid w-full max-w-[1180px] gap-8 sm:gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
+        <div className="min-w-0 text-center lg:text-left">
           <div className="dl-reveal mb-6 inline-flex items-center gap-2 rounded-full border border-[#FEAE2C]/25 bg-[#FEAE2C]/10 px-4 py-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FEAE2C] shadow-[0_0_10px_#FEAE2C]" />
             <span className="text-[11px] font-black uppercase tracking-[0.18em] text-[#FEAE2C]">
@@ -179,42 +179,42 @@ export default function DownloadPage() {
             </span>
           </div>
 
-          <h1 className="max-w-[760px] text-[clamp(48px,8vw,104px)] font-normal leading-[0.9] tracking-[-0.02em]">
+          <h1 className="mx-auto max-w-[760px] text-[clamp(42px,15vw,104px)] font-normal leading-[0.92] tracking-[-0.02em] lg:mx-0">
             <SplitText text="Passmark is" />
             <br />
             <SplitText className="italic text-[#9BF6BA]" text="almost ready." />
           </h1>
 
-          <p className="dl-reveal mt-7 max-w-[620px] text-[16px] font-medium leading-8 text-[#BFD7C3] md:text-[18px]">
+          <p className="dl-reveal mx-auto mt-7 max-w-[620px] text-[15px] font-medium leading-7 text-[#BFD7C3] sm:text-[16px] md:text-[18px] md:leading-8 lg:mx-0">
             The app is still in beta and may be unstable. We are testing the
             Android build now, fixing rough edges, and preparing a stable public
             release soon.
           </p>
 
-          <div className="dl-reveal mt-9 flex flex-wrap gap-3">
+          <div className="dl-reveal mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <button
               disabled
-              className="inline-flex h-12 cursor-not-allowed items-center gap-2 rounded-full bg-[#9BF6BA]/55 px-6 text-sm font-black text-[#061F13] opacity-75"
+              className="inline-flex h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-[#9BF6BA]/55 px-6 text-sm font-black text-[#061F13] opacity-75 sm:w-auto"
               aria-label="Beta APK access is coming soon"
             >
-              Beta APK coming soon <Clock3 size={16} />
+              Beta APK coming soon <Clock03Icon size={16} />
             </button>
             <Link
               href="/#features"
-              className="inline-flex h-12 items-center gap-2 rounded-full border border-[#F3FFF1]/15 px-6 text-sm font-bold text-[#F3FFF1] transition-colors hover:border-[#9BF6BA]/45"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[#F3FFF1]/15 px-6 text-sm font-bold text-[#F3FFF1] transition-colors hover:border-[#9BF6BA]/45 sm:w-auto"
             >
-              See what is inside <ArrowRight size={16} />
+              See what is inside <ArrowRight01Icon size={16} />
             </Link>
           </div>
         </div>
 
-        <div className="dl-reveal rounded-[8px] border border-[#9BF6BA]/18 bg-[#082216]/88 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] md:p-7">
+        <div className="dl-reveal min-w-0 rounded-[8px] border border-[#9BF6BA]/18 bg-[#082216]/88 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.32)] sm:p-5 md:p-7">
           <div className="rounded-[8px] border border-[#FEAE2C]/25 bg-[#FEAE2C]/10 p-5">
             <div className="flex gap-4">
               <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#FEAE2C]/14 text-[#FEAE2C]">
-                <AlertTriangle size={22} />
+                <Alert02Icon size={22} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-black uppercase tracking-[0.12em] text-[#FEAE2C]">
                   Beta warning
                 </p>
@@ -236,7 +236,7 @@ export default function DownloadPage() {
                     : "border-[#F3FFF1]/8 bg-[#F3FFF1]/4"
                 }`}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div
                     className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full ${
                       available ? "bg-[#9BF6BA] text-[#061F13]" : "bg-[#F3FFF1]/8 text-[#BFD7C3]"
@@ -245,10 +245,10 @@ export default function DownloadPage() {
                     <Icon size={19} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
                       <h2 className="text-base font-black">{label}</h2>
                       <span
-                        className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${
+                        className={`w-fit rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${
                           available ? "bg-[#9BF6BA]/12 text-[#9BF6BA]" : "bg-[#F3FFF1]/8 text-[#BFD7C3]"
                         }`}
                       >
@@ -264,16 +264,16 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-10 grid max-w-[1180px] gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+      <section className="mx-auto mt-8 grid w-full max-w-[1180px] gap-5 sm:mt-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="dl-reveal rounded-[8px] border border-[#F3FFF1]/10 bg-[#F3FFF1]/5 p-6 md:p-7">
           <div className="flex items-center gap-3">
-            <ShieldCheck className="h-5 w-5 text-[#9BF6BA]" />
+            <SecurityCheckIcon className="h-5 w-5 text-[#9BF6BA]" />
             <h2 className="text-xl font-black">What this means</h2>
           </div>
           <div className="mt-6 space-y-4">
             {betaNotes.map((note) => (
               <div key={note} className="flex gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#9BF6BA]" />
+                <CheckmarkCircle02Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#9BF6BA]" />
                 <p className="text-sm leading-6 text-[#CFE3D0]">{note}</p>
               </div>
             ))}
@@ -294,9 +294,9 @@ export default function DownloadPage() {
           </p>
           <Link
             href="/#download"
-            className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-[#061F13] px-5 text-sm font-black text-[#F3FFF1]"
+            className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#061F13] px-5 text-sm font-black text-[#F3FFF1] sm:w-auto"
           >
-            Back to landing page <ArrowRight size={15} />
+            Back to landing page <ArrowRight01Icon size={15} />
           </Link>
         </div>
       </section>
