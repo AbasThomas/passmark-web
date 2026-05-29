@@ -3,7 +3,10 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
-import { Check, Star, ArrowRight, Sparkles } from "lucide-react";
+import {
+  ArrowRight01Icon as ArrowRight,
+  CheckmarkCircle02Icon as Check,
+} from "hugeicons-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -246,5 +249,3 @@ export default function PricingPreview() {
     </section>
   );
 }
-
-

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight01Icon as ArrowRight,
+  CheckmarkCircle02Icon as CheckCircle2,
+} from "hugeicons-react";
 import { blogPosts, createMetadata, siteUrl } from "../../seo";
 
 type BlogPostPageProps = {

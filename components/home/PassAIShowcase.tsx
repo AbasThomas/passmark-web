@@ -1,7 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Languages, Mic, Sparkles } from "lucide-react";
+import {
+  LanguageSkillIcon as Languages,
+  Mic01Icon as Mic,
+  SparklesIcon as Sparkles,
+} from "hugeicons-react";
 import { Instrument_Serif } from "next/font/google";
 
 const instrumentSerif = Instrument_Serif({

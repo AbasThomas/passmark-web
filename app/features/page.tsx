@@ -6,20 +6,18 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  ArrowDown,
-  Play,
-  Bot,
-  BookOpen,
-  Timer,
-  WifiOff,
-  Send,
-  Check,
-  ChevronRight,
-  Calculator,
-  Download,
-  Battery,
-  CloudDownload,
-} from "lucide-react";
+  ArrowDown01Icon as ArrowDown,
+  ArrowRight01Icon as ChevronRight,
+  BookOpen01Icon as BookOpen,
+  BotIcon as Bot,
+  BatteryFullIcon as Battery,
+  CalculatorIcon as Calculator,
+  CheckmarkCircle02Icon as Check,
+  SendingOrderIcon as Send,
+  Timer01Icon as Timer,
+  WifiOff01Icon as WifiOff,
+  CloudDownloadIcon as CloudDownload,
+} from "hugeicons-react";
 
 gsap.registerPlugin(ScrollTrigger);
 

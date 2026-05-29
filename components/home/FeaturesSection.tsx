@@ -5,15 +5,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Instrument_Serif } from "next/font/google";
 import {
-  Bot,
-  BookOpen,
-  Timer,
-  Flame,
-  Trophy,
-  WifiOff,
-  Users,
-  CreditCard,
-} from "lucide-react";
+  BookOpen01Icon as BookOpen,
+  BotIcon as Bot,
+  CreditCardIcon as CreditCard,
+  FireIcon as Flame,
+  Timer01Icon as Timer,
+  ChampionIcon as Trophy,
+  UserGroupIcon as Users,
+  WifiOff01Icon as WifiOff,
+} from "hugeicons-react";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",

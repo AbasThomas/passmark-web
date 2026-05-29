@@ -146,7 +146,7 @@ const structuredData = {
       name: "Passmark",
       url: siteUrl,
       applicationCategory: "EducationalApplication",
-      operatingSystem: "Android, iOS, Web",
+      operatingSystem: "Android",
       inLanguage: "en-NG",
       image: ogImage,
       description:

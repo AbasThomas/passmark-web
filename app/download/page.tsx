@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
 import { gsap } from "gsap";
+import BetaDownloadModal from "@/components/BetaDownloadModal";
 import {
   Alert02Icon,
   ArrowRight01Icon,
   CheckmarkCircle02Icon,
-  Clock03Icon,
   Download04Icon,
   SecurityCheckIcon,
   SmartPhone01Icon,
@@ -72,6 +72,7 @@ function SplitText({ text, className }: { text: string; className?: string }) {
 export default function DownloadPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [showBetaModal, setShowBetaModal] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -193,11 +194,12 @@ export default function DownloadPage() {
 
           <div className="dl-reveal mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <button
-              disabled
-              className="inline-flex h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-[#9BF6BA]/55 px-6 text-sm font-black text-[#061F13] opacity-75 sm:w-auto"
-              aria-label="Beta APK access is coming soon"
+              type="button"
+              onClick={() => setShowBetaModal(true)}
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#9BF6BA] px-6 text-sm font-black text-[#061F13] transition-transform hover:scale-[1.02] active:scale-[0.98] sm:w-auto"
+              aria-label="Download beta APK"
             >
-              Beta APK coming soon <Clock03Icon size={16} />
+              Download beta APK <Download04Icon size={16} />
             </button>
             <Link
               href="/#features"
@@ -300,6 +302,8 @@ export default function DownloadPage() {
           </Link>
         </div>
       </section>
+
+      <BetaDownloadModal open={showBetaModal} onClose={() => setShowBetaModal(false)} />
     </main>
   );
 }

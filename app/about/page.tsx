@@ -4,7 +4,13 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Rocket, Eye, Download, Link as LinkIcon, Mail } from "lucide-react";
+import {
+  Download04Icon as Download,
+  EyeIcon as Eye,
+  Link02Icon as LinkIcon,
+  Mail01Icon as Mail,
+  RocketIcon as Rocket,
+} from "hugeicons-react";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { Instrument_Serif } from "next/font/google";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BetaDownloadModal from "@/components/BetaDownloadModal";
 import {
-  Smartphone,
-  Apple,
-  ArrowUpRight
-} from "lucide-react";
+  AppleIcon as Apple,
+  ArrowUpRight01Icon as ArrowUpRight,
+  SmartPhone01Icon as Smartphone,
+} from "hugeicons-react";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
@@ -42,6 +42,8 @@ function SplitText({ text, className }: { text: string; className?: string }) {
 export default function DownloadCTA() {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [showBetaModal, setShowBetaModal] = useState(false);
+  const [downloadPlatform, setDownloadPlatform] = useState<"android" | "ios">("android");
 
   // Background grain texture
   useEffect(() => {
@@ -175,30 +177,34 @@ export default function DownloadCTA() {
 
         {/* Download buttons */}
         <div className="dl-fade-up flex flex-col sm:flex-row gap-6 w-full max-w-xl justify-center">
-          <Link
-            href="https://play.google.com/store"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => {
+              setDownloadPlatform("android");
+              setShowBetaModal(true);
+            }}
             className="flex-1 flex items-center justify-between gap-4 bg-[#FAF7F2] text-[#061206] px-6 py-5 rounded-xl border-2 border-[#FAF7F2] shadow-[6px_6px_0px_0px_rgba(254,174,44,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,0)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all duration-200 group active:scale-[0.98]"
           >
             <div className="flex items-center gap-4">
               <Smartphone className="w-8 h-8 text-[#061206]" />
               <div className="text-left">
                 <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#061206]/60 leading-none mb-1">
-                  Get it on
+                  Download beta
                 </p>
                 <p className="text-xl font-bold leading-none">
-                  Google Play
+                  Android APK
                 </p>
               </div>
             </div>
             <ArrowUpRight className="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
-          </Link>
+          </button>
 
-          <Link
-            href="https://apps.apple.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => {
+              setDownloadPlatform("ios");
+              setShowBetaModal(true);
+            }}
             className="flex-1 flex items-center justify-between gap-4 bg-transparent text-[#FAF7F2] px-6 py-5 rounded-xl border-2 border-[#FAF7F2] shadow-[6px_6px_0px_0px_rgba(0,200,80,0.4)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,0)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all duration-200 group active:scale-[0.98]"
           >
             <div className="flex items-center gap-4">
@@ -213,19 +219,15 @@ export default function DownloadCTA() {
               </div>
             </div>
             <ArrowUpRight className="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
-          </Link>
-        </div>
-
-        <div className="dl-fade-up mt-12">
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors group"
-          >
-            Or: Continue on Web Platform
-            <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
+          </button>
         </div>
       </div>
+
+      <BetaDownloadModal
+        open={showBetaModal}
+        platform={downloadPlatform}
+        onClose={() => setShowBetaModal(false)}
+      />
 
       <style>{`
         .dl-title,

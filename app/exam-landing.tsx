@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight01Icon as ArrowRight,
+  CheckmarkCircle02Icon as CheckCircle2,
+} from "hugeicons-react";
 
 type ExamLandingProps = {
   h1: string;

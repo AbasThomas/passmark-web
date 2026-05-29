@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Instrument_Serif } from "next/font/google";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight01Icon as ArrowRight } from "hugeicons-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

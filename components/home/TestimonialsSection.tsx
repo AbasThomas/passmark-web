@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Instrument_Serif } from "next/font/google";
-import { Star, MessageSquare } from "lucide-react";
+import { StarIcon as Star } from "hugeicons-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

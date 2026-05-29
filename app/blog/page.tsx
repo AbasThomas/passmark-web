@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight01Icon as ArrowRight } from "hugeicons-react";
 import { blogPosts, createMetadata, siteUrl } from "../seo";
 
 export const metadata: Metadata = {

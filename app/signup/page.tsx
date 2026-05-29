@@ -4,7 +4,21 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
-import { User, Mail, Phone, GraduationCap, Lock, ArrowRight, Eye, EyeOff, ChevronDown } from "lucide-react";
+import {
+  AppleIcon,
+  ArrowDown01Icon as ChevronDown,
+  ArrowRight01Icon as ArrowRight,
+  CheckmarkCircle02Icon,
+  GoogleIcon,
+  GraduationScrollIcon as GraduationCap,
+  LockIcon as Lock,
+  Mail01Icon as Mail,
+  PhoneCheckIcon as Phone,
+  StarIcon,
+  UserIcon as User,
+  ViewIcon as Eye,
+  ViewOffSlashIcon as EyeOff,
+} from "hugeicons-react";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -83,9 +97,7 @@ export default function SignupPage() {
               <div>
                 <div className="flex gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-secondary-container" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
+                    <StarIcon key={i} className="w-4 h-4 text-secondary-container" />
                   ))}
                 </div>
                 <p className="text-white italic mb-1 text-sm">
@@ -120,9 +132,7 @@ export default function SignupPage() {
             <div className="lg:hidden flex justify-center mb-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                  </svg>
+                  <CheckmarkCircle02Icon className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-2xl font-bold text-primary">Passmark</span>
               </div>
@@ -273,21 +283,14 @@ export default function SignupPage() {
                   type="button"
                   className="flex items-center justify-center gap-2 border border-outline-variant py-3 rounded-lg font-bold hover:bg-surface-container transition-colors"
                 >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
-                    <path
-                      d="M12.545,11.033h9.463c0.147,0.574,0.222,1.174,0.222,1.791c0,5.631-3.791,9.65-9.463,9.65c-5.462,0-9.888-4.426-9.888-9.888s4.426-9.888,9.888-9.888c2.66,0,4.886,0.978,6.606,2.574l-2.651,2.548c-0.742-0.713-2.036-1.542-3.955-1.542c-3.387,0-6.143,2.808-6.143,6.266c0,3.458,2.756,6.266,6.143,6.266c3.928,0,5.397-2.822,5.626-4.275H12.545V11.033z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                  <GoogleIcon className="w-5 h-5" />
                   Google
                 </button>
                 <button
                   type="button"
                   className="flex items-center justify-center gap-2 border border-outline-variant py-3 rounded-lg font-bold hover:bg-surface-container transition-colors"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                  </svg>
+                  <AppleIcon className="w-5 h-5" />
                   Apple
                 </button>
               </div>

@@ -5,14 +5,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Instrument_Serif } from "next/font/google";
 import {
-  Zap,
-  Trophy,
-  Award,
-  Target,
-  Gamepad2,
-  Lock,
-  CheckCircle2
-} from "lucide-react";
+  Award01Icon as Award,
+  CheckmarkCircle02Icon as CheckCircle2,
+  GameController03Icon as Gamepad2,
+  LockIcon as Lock,
+  Target01Icon as Target,
+  ChampionIcon as Trophy,
+  ZapIcon as Zap,
+} from "hugeicons-react";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
